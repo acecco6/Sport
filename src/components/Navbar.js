@@ -1,8 +1,6 @@
 import "../assets/navbar.css"
 
-import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CartWidget from "./CartWidget";
 import React from "react";
 
 function Navbar() {
@@ -24,7 +22,7 @@ function Navbar() {
                             <a href="#">Contacto</a>
                         </li>
                         <li>
-                            <a> <FontAwesomeIcon icon={faShoppingCart} /> </a>
+                            <a> <CartWidget /> </a>
                         </li>
                     </ul>
                 </nav>
