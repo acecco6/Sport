@@ -3,16 +3,11 @@ import "../assets/item_count.css"
 import React from "react";
 import { useState } from "react";
 
-function ItemCount(props) {
-    const [count, setCount] = useState(props.initial);
-
-    function OnAdd(){
-        console.log("Producto Camisa agregado")
-        console.log("cantidad= "+count)
-    }
+function ItemCount({ initial, stock, onAdd}) {
+    const [count, setCount] = useState(initial);
 
     function cantidadUp() {
-        if ( (count>=1) && (count<props.stock) ) {
+        if ( (count>=1) && (count<stock) ) {
             setCount(count+1) 
         }
     }
@@ -33,7 +28,7 @@ function ItemCount(props) {
             </div>
 
             <div className="card__Add">
-                <button onClick={OnAdd}>
+                <button onClick={onAdd}>
                     Agregar al Carrito
                 </button>
             </div> 

@@ -8,7 +8,7 @@ function App() {
         <>
             <Navbar />
             <ItemListConteiner greeting="Productos Mas Vendidos"/>
-            <ItemCount initial={1} stock={5}  />
+            <ItemCount initial={1} stock={5} onAdd={""} />
         </>
     )
 }
