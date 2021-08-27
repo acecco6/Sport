@@ -1,5 +1,3 @@
-import "../assets/item_count.css"
-
 import React from "react";
 import { useState } from "react";
 
@@ -17,22 +15,18 @@ function ItemCount({ initial, stock, onAdd}) {
         }
     }
     return(
-        <div className="card">
-            <p>Camisa Tiger</p>
+        <>
+            <p>Nombre del Producto</p>
             <div className="card__button">
                 <button className="button_change" onClick={cantidadDown}>-</button>
-
-                <p>{count}</p>
-
+                <p className="change">{count}</p>
                 <button className="button_change" onClick={cantidadUp}>+</button>
             </div>
 
             <div className="card__Add">
-                <button onClick={onAdd}>
-                    Agregar al Carrito
-                </button>
+                <button onClick={onAdd}>Agregar al Carrito</button>
             </div> 
-        </div>
+        </>
     )
 }
 
