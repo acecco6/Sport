@@ -1,10 +1,15 @@
+import "../assets/loader.css"
+
 import ItemCount from "./ItemCount";
-import React from "react";
 
 function ItemList({items}) {
     return (
         <div className="item__content">
-            {
+            {items.length==0 ?(
+                <div className="carga">
+                    <div className="loader" id="loader">Loading...</div>
+                </div>
+            ):
                 items.map(
                     e=>
                     <div key={e.id} className="item__card">
@@ -12,7 +17,7 @@ function ItemList({items}) {
                             <img src={e.imagen} alt="imagen" />
                         </div>
                         <div className="item__card__description">
-                            <ItemCount initial={1} stock={e.stock} onAdd={""} />
+                            <ItemCount initial={1} stock={e.stock} onAdd={""} nombre={e.nombre} precio={e.precio} descipcion={e.descipcion} />
                         </div>
                     </div>
                 ) 

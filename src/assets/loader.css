@@ -1,0 +1,71 @@
+.carga{
+    width: 100%;
+    height: 150px;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader {
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+  }
+  @-webkit-keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0em -3em 0em 0.2em #264653, 2em -2em 0 0em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 0em #264653;
+    }
+    12.5% {
+      box-shadow: 0em -3em 0em 0em #264653, 2em -2em 0 0.2em #264653, 3em 0em 0 0em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    25% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 0em #264653, 3em 0em 0 0.2em #264653, 2em 2em 0 0em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    37.5% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 0em #264653, 2em 2em 0 0.2em #264653, 0em 3em 0 0em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    50% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 0em #264653, 0em 3em 0 0.2em #264653, -2em 2em 0 0em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    62.5% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 0em #264653, -2em 2em 0 0.2em #264653, -3em 0em 0 0em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    75% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 0em #264653, -3em 0em 0 0.2em #264653, -2em -2em 0 0em #264653;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0em 0em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 0em #264653, -3em 0em 0 0em #264653, -2em -2em 0 0.2em #264653;
+    }
+  }
+  @keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0em -3em 0em 0.2em #264653, 2em -2em 0 0em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 0em #264653;
+    }
+    12.5% {
+      box-shadow: 0em -3em 0em 0em #264653, 2em -2em 0 0.2em #264653, 3em 0em 0 0em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    25% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 0em #264653, 3em 0em 0 0.2em #264653, 2em 2em 0 0em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    37.5% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 0em #264653, 2em 2em 0 0.2em #264653, 0em 3em 0 0em #264653, -2em 2em 0 -0.5em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    50% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 0em #264653, 0em 3em 0 0.2em #264653, -2em 2em 0 0em #264653, -3em 0em 0 -0.5em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    62.5% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 0em #264653, -2em 2em 0 0.2em #264653, -3em 0em 0 0em #264653, -2em -2em 0 -0.5em #264653;
+    }
+    75% {
+      box-shadow: 0em -3em 0em -0.5em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 0em #264653, -3em 0em 0 0.2em #264653, -2em -2em 0 0em #264653;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0em 0em #264653, 2em -2em 0 -0.5em #264653, 3em 0em 0 -0.5em #264653, 2em 2em 0 -0.5em #264653, 0em 3em 0 -0.5em #264653, -2em 2em 0 0em #264653, -3em 0em 0 0em #264653, -2em -2em 0 0.2em #264653;
+    }
+  }
