@@ -150,7 +150,6 @@ html{
 .nav_position{
     height: 45px;
     position: fixed;
-    transition: all 0.3s;
     top: 0%;
     z-index: 10;
     animation-name:navbotom;
