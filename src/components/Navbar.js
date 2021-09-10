@@ -6,8 +6,18 @@ import CartWidget from "./CartWidget";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 import React from "react";
+import { useState } from "react";
 
 function Navbar() {
+    const [navPosition, setnavPosition] = useState(false)
+    const changeNavBar= () =>{
+        if (window.scrollY>=205) {
+            setnavPosition(true)
+        }else{
+            setnavPosition(false)
+        }
+    }
+    window.addEventListener("scroll",changeNavBar)
     return(
         <div className="Header">
             <div className="head__info">
@@ -40,7 +50,7 @@ function Navbar() {
                 </div>
             </div>
 
-            <div className="head__nav">
+            <div className={navPosition? "head__nav nav_position" : "head__nav" }>
                 <ul>
                     <li><Link to="/">inicio</Link></li>
                     <li><Link to="/categoria/2">notebooks</Link></li>

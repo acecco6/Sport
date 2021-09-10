@@ -20,15 +20,17 @@ function ItemDetail({items}) {
                 <div className="item__detail__description">
                     <div id="description__pro">
                         <h2>{items.nombre}</h2>
-                        <p>${items.precio.toFixed(2)}</p>
+                        <p>Precio: { items.descuento==false ? (items.precio.toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})):(items.precio-(items.precio*(items.porcentaje/100))).toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})}</p>
                     </div>
                     <div id="description__pro_botom">
                         <p>{items.descipcion}</p>
-                        {/* <ItemCount initial={1} stock={items.stock}  precio={items.precio}/> */}
+                        <ItemCount initial={1} stock={items.stock} />
+                        <div className="card__Add_detail">
+                            <button>Agregar al Carrito</button>
+                        </div> 
                     </div>
                     
                 </div>
-                
             </div>
         )
         }
