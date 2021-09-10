@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function ItemCount({ initial, stock, onAdd, nombre,descipcion,precio}) {
+function ItemCount({ initial, stock, onAdd, nombre,descipcion,precio,id,procesador}) {
     const [count, setCount] = useState(initial);
 
     function cantidadUp() {
@@ -17,7 +17,7 @@ function ItemCount({ initial, stock, onAdd, nombre,descipcion,precio}) {
     return(
         <>
             <p>{nombre}</p>
-            <p>{descipcion}</p>
+            <p>{procesador}</p>
             <p>Precio: <span>${precio.toFixed(2)}</span></p>
             <div className="card__button">
                 <button className="button_change" onClick={cantidadDown}>-</button>

@@ -1,4 +1,5 @@
 import "../assets/loader.css"
+import "../assets/itemdetail.css"
 
 import ItemCount from "./ItemCount";
 import React from "react";
@@ -12,15 +13,22 @@ function ItemDetail({items}) {
             </div>
             
         ):(
-            <div className="item__content">
-                <div key={items.id} className="item__card">
-                    <div className="item__card__img">
-                        <img src={items.imagen} alt="imagen" />
-                    </div>
-                    <div className="item__card__description">
-                        <ItemCount initial={1} stock={items.stock} onAdd={""} nombre={items.nombre} precio={items.precio} descipcion={items.descipcion} />
-                    </div>
+            <div className="item__detail">
+                <div className="item__detail__img">
+                    <img src={items.imagen} />           
                 </div> 
+                <div className="item__detail__description">
+                    <div id="description__pro">
+                        <h2>{items.nombre}</h2>
+                        <p>${items.precio.toFixed(2)}</p>
+                    </div>
+                    <div id="description__pro_botom">
+                        <p>{items.descipcion}</p>
+                        {/* <ItemCount initial={1} stock={items.stock}  precio={items.precio}/> */}
+                    </div>
+                    
+                </div>
+                
             </div>
         )
         }
