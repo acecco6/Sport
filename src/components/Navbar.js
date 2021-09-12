@@ -1,6 +1,6 @@
 import "../assets/navbar.css"
 
-import { faEnvelope, faPhoneAlt, faSearch, faUser, faAngleUp } from '@fortawesome/free-solid-svg-icons'
+import { faAngleUp, faEnvelope, faPhoneAlt, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import CartWidget from "./CartWidget";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,7 @@ import React from "react";
 import { useState } from "react";
 
 function Navbar() {
+    document.title = 'Radtek';
     const [navPosition, setnavPosition] = useState(false)
     const changeNavBar= () =>{
         if (window.scrollY>=205) {

@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom/cjs/react-router-dom.min"
 
+import Cart from "./components/Cart"
+import CartContext from "./components/CartContext"
 import Footer from "./components/Footer"
 import ItemDetailConteiner from "./components/ItemDetailConteiner"
 import ItemListConteiner from "./components/ItemListConteiner"
@@ -9,15 +11,16 @@ function App() {
     
     return(
         <BrowserRouter>
-        <Navbar />
-            {/* <ItemListConteiner greeting="Productos"/> */}
-            {/* <ItemDetailConteiner greeting="Productos" /> */}
-            <Switch>
-                <Route path="/" component={ItemListConteiner} exact />
-                <Route path="/categoria/:id" component={ItemListConteiner} />
-                <Route path="/item/:id" component={ItemDetailConteiner} />
-            </Switch>
-        <Footer/>
+            <CartContext>
+                <Navbar />
+                <Switch>
+                    <Route path="/" component={ItemListConteiner} exact />
+                    <Route path="/categoria/:id" component={ItemListConteiner} />
+                    <Route path="/item/:id" component={ItemDetailConteiner} />
+                    <Route path="/cart" component={Cart} />
+                </Switch>
+                <Footer/>        
+            </CartContext>
         </BrowserRouter>
                     
     )

@@ -1,16 +1,20 @@
 import "../assets/loader.css"
 import "../assets/itemdetail.css"
 
+import { useContext, useState } from "react";
+
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import React from "react";
-import { useState } from "react";
+import { contexto } from "./CartContext";
 
 function ItemDetail({items}) {
     const [Compra, setCompra] = useState(false)
+    const {addItem} =useContext(contexto)
+    
     function onAdd(cantidad) {
         setCompra(true)
-        console.log(cantidad)
+        addItem(items,cantidad)
     }
     return(
         <>
