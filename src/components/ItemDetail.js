@@ -8,8 +8,9 @@ import { useState } from "react";
 
 function ItemDetail({items}) {
     const [Compra, setCompra] = useState(false)
-    function onAdd() {
+    function onAdd(cantidad) {
         setCompra(true)
+        console.log(cantidad)
     }
     return(
         <>
