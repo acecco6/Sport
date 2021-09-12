@@ -1,6 +1,6 @@
 import "../assets/navbar.css"
 
-import { faEnvelope, faPhoneAlt, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhoneAlt, faSearch, faUser, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 
 import CartWidget from "./CartWidget";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -19,7 +19,8 @@ function Navbar() {
     }
     window.addEventListener("scroll",changeNavBar)
     return(
-        <div className="Header">
+        <>
+        <div id="Header">
             <div className="head__info">
                 <div>
                     <p>Envíos y devoluciones completamente gratis en todo el mundo</p>
@@ -61,6 +62,10 @@ function Navbar() {
             </div>
 
         </div>
+        <div id="page-up" className={navPosition? ("active"):<></>}>
+            <a href="#Header"><FontAwesomeIcon icon={faAngleUp} /></a>
+        </div>
+        </>
     )
 }
 export default Navbar

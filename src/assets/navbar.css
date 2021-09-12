@@ -8,7 +8,7 @@ body{
 html{
     scroll-behavior: smooth !important;
 }
-.Header{
+#Header{
     width: 100%;
     height: 200px;
     background-color: rgb(37, 37, 37);
@@ -156,4 +156,36 @@ html{
     animation-duration:0.3s;
     animation-iteration-count:1 ;
     background-color:rgba(38, 107, 249,0.9);
+}
+#page-up{
+    
+    position: fixed;
+    bottom: 3%;
+    border-radius: 100%;
+    right: 1.5%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#353535;
+    z-index: 5;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+#page-up a{
+    color: white;
+    text-decoration: none;
+}
+@keyframes upButon{
+    from{transform: translateY(200%);}
+    to{transform: translateY(0%)}
+}
+.active{
+    display: flex !important;
+    animation-name:upButon;
+    animation-duration:0.3s;
+    animation-iteration-count:1 ;
 }

@@ -26,9 +26,6 @@ function ItemDetail({items}) {
                     <div id="description__pro_botom">
                         <p>{items.descipcion}</p>
                         <ItemCount initial={1} stock={items.stock} />
-                        <div className="card__Add_detail">
-                            <button>Agregar al Carrito</button>
-                        </div> 
                     </div>
                     
                 </div>

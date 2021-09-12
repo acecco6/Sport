@@ -17,9 +17,16 @@ function ItemCount({ initial,stock }) {
     return(
         <>
             <div className="card__button">
-                <button className="button_change" onClick={cantidadDown}>-</button>
-                <p className="change">{count}</p>
-                <button className="button_change" onClick={cantidadUp}>+</button>
+
+                <div id="buton_contents">
+                    <button className="button_change" onClick={cantidadDown}>-</button>
+                    <p className="change">{count}</p>
+                    <button className="button_change" onClick={cantidadUp}>+</button>
+                </div>
+
+                <div className="card__Add_detail">
+                    <button>Agregar al Carrito</button>
+                </div> 
             </div>
         </>
     )

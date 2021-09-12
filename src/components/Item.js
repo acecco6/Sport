@@ -31,7 +31,6 @@ function Item({item}) {
                 
             </div>
             <div className="producto__footer"  >
-                <ItemCount initial={1} stock={item.stock}  />
                 <div className="card__Add">
                     <button>Agregar al Carrito</button>
                 </div> 
