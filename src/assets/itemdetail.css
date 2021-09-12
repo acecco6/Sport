@@ -28,7 +28,6 @@
     width: 100%;
     font-size: 20px;
     border-bottom: 2px solid rgb(110, 110, 110);
-    
 }
 #description__pro h2{
     margin-bottom: 8px;
@@ -40,6 +39,7 @@
     margin-top: 15px;
     text-align: justify;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
 }
 .card__button{
     padding: 0px 0px !important;
@@ -53,6 +53,7 @@
     border-radius: 4px;
     margin-right: 15px;
     color: white;
+
 }
 #buton_contents p{
     margin: 0px 5px;
@@ -70,7 +71,7 @@
 #buton_contents button:hover{
     background-color: rgb(51, 51, 51);
 }
-.card__Add_detail button{
+.card__Add_detail button ,.card__finish_detail button{
     width: 190px;
     height: 40px;
     border-radius: 4px;
@@ -85,6 +86,33 @@
     cursor: pointer;
 }
 
+@keyframes FinishBuy{
+    0% { transform: translateX(-100%); }
+    25% { transform: translateX(-75%); }
+    50% { transform: translateX(-50%); }
+    75% { transform: translateX(-25%); }
+    100% { transform: translateX(0%); }
+    
+}
+.card__finish_detail{
+    animation-name:FinishBuy;
+    animation-duration:0.3s;
+    animation-iteration-count:1;
+    animation-timing-function: ease-in;
+}
+.card__finish_detail button{
+    margin-top: 15px;
+    background-color: #4eff6e;
+    cursor: pointer;
+}
+.card__finish_detail button:hover{
+    transition: all 0.2s;
+    background-color: #04e762;
+}
+.card__finish_detail button:focus ,.card__finish_detail button:active{
+    border: none !important;
+    outline:none !important
+}
 @keyframes descuento{
     0% { transform: scale(1); }
     25% { transform: scale(1.04); }

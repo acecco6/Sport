@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function ItemCount({ initial,stock }) {
+function ItemCount({ initial,stock,onAdd }) {
     const [count, setCount] = useState(initial);
 
     function cantidadUp() {
@@ -25,7 +25,7 @@ function ItemCount({ initial,stock }) {
                 </div>
 
                 <div className="card__Add_detail">
-                    <button>Agregar al Carrito</button>
+                    <button onClick={onAdd}>Agregar al Carrito</button>
                 </div> 
             </div>
         </>

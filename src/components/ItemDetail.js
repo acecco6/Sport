@@ -2,9 +2,15 @@ import "../assets/loader.css"
 import "../assets/itemdetail.css"
 
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 import React from "react";
+import { useState } from "react";
 
 function ItemDetail({items}) {
+    const [Compra, setCompra] = useState(false)
+    function onAdd() {
+        setCompra(true)
+    }
     return(
         <>
         {items.length ==0 ? (
@@ -25,7 +31,11 @@ function ItemDetail({items}) {
                     </div>
                     <div id="description__pro_botom">
                         <p>{items.descipcion}</p>
-                        <ItemCount initial={1} stock={items.stock} />
+                        {Compra==false ? (<ItemCount initial={1} stock={items.stock} onAdd={onAdd} />):
+                        <div className="card__finish_detail">
+                            <Link to="/cart"><button>Terminar Compra</button></Link>
+                        </div> }
+                        
                     </div>
                     
                 </div>
