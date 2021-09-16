@@ -28,9 +28,15 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color:rgb(6, 42, 116);
     padding: 0px 90px; 
     color: white;
+}
+.footer__copy img{
+    width: 250px;
+    height: 35px;
+    object-fit: cover;
 }
 
 .center{

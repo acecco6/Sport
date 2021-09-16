@@ -28,6 +28,7 @@ function Footer() {
             
             <div className="footer__copy">
                 <p>© 2021 <span>R</span>adtek Made With  By Alejo Cecco.</p>
+                <img src="https://vinotecalacristaleria.es/wp-content/uploads/2019/07/iconos-tarjetas-de-credito.png" />
             </div>
         </div>
     )

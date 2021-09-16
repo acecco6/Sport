@@ -13,7 +13,13 @@ function CartContext({children}){
         if(exist!=undefined){
             for (const e of ProductoCarrito) {
                 if(e.item.id==detalle.id){
-                    e.cantidad+=cantidad
+                    let total=e.cantidad+cantidad
+                    if(e.cantidad<e.item.stock && total<e.item.stock ){
+                        e.cantidad+=cantidad
+                    }else{
+                        e.cantidad=e.item.stock
+                    }
+                    
                 }
             }
         }else{

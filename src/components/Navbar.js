@@ -1,16 +1,24 @@
 import "../assets/navbar.css"
 
 import { faAngleUp, faEnvelope, faPhoneAlt, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { useContext, useEffect, useState } from "react";
 
 import CartWidget from "./CartWidget";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 import React from "react";
-import { useState } from "react";
+import { contexto } from "./CartContext";
 
 function Navbar() {
+    
     document.title = 'Radtek';
+    const {ProductoCarrito} =useContext(contexto)
     const [navPosition, setnavPosition] = useState(false)
+    const [countCarrito,setcountCarrito]= useState(ProductoCarrito.length)
+    useEffect(() => {
+        setcountCarrito(ProductoCarrito.length)
+    }, [ProductoCarrito])
+    
     const changeNavBar= () =>{
         if (window.scrollY>=205) {
             setnavPosition(true)
@@ -35,7 +43,7 @@ function Navbar() {
                         <FontAwesomeIcon icon={faEnvelope} /><p>example@example.com</p>
                     </div>
                     <div className="info__cuenta">
-                        <FontAwesomeIcon icon={faUser} /><p>Account</p>
+                        <Link to="/Account"><FontAwesomeIcon icon={faUser} /><p>Account</p></Link>
                     </div>
                 </div>
             </div> 
@@ -48,7 +56,10 @@ function Navbar() {
                     <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
                 </div>
                 <div className="local__bag">
-                    <CartWidget/>
+                    <Link to="/cart"><CartWidget/></Link> 
+                    <div className="local__bag_number">
+                        <p>{countCarrito}</p>
+                    </div>
                 </div>
             </div>
 
