@@ -28,6 +28,9 @@ function Item({item}) {
                 <p className="body_nombre">{item.nombre}</p>
                 <p>Precio: { item.descuento==false ? (item.precio.toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})):(item.precio-(item.precio*(item.porcentaje/100))).toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})}</p>
                 { item.procesador!=undefined ? (<p>Procesador: {item.procesador}</p>): <></>  }
+                <Link className="detalle_movil" to={`/item/${item.id}`}>
+                    <p>Ver Detalle</p>
+                </Link>
                 
             </div>
             <div className="producto__footer"  >

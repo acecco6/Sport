@@ -1,238 +1,142 @@
-@keyframes volver{
-    from{transform: scale(0);}
-    to{transform: scale(1)}
-}
-@keyframes aparecer{
-    from{transform: scale(0);}
-    to{transform: scale(1)}
-}
-#volver{
-    display: flex;
-    justify-content: center;
-    font-size: 22px;
-    margin-top: 30px;
-    animation: aparecer;
+#alert{
+    margin:50px 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    animation: table;
     animation-duration: 0.2s;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#volver a{
-    color:  black;
-    margin-left: 10px;
-}
 
-.carrito__content{
-    width: 100%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: volver;
-    animation-duration: 0.3s;
 }
-.carrito__content a{
-    color: black;
-    text-decoration: none;
-}
-.carrito__card{
-    width:900px;
-    height: 90%;
-    display: flex;
-    box-shadow: 0px 0px 10px 3px #797979;
-}
-.carrito__info{
-    width:580px;
-    height: 100%;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(65, 66, 74);
-    border-right: 1px solid white;
-}
-.carrito__info h2{
+#alert span{
+    display: inline-block;
     margin-top: 10px;
-    margin-bottom:5px;
-    font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: #06d6a0;
 }
-.carrito__detail{
-    width:320px;
-    height: 100%;
-    background-color: rgb(75, 66, 65);
-}
-.info__card{
-    width: 90%;
-    height: 350px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    padding: 10px 20px;
-    overflow-y: auto;
-    align-content: flex-start;
-}
-
-.info__card__img, .info__card__nombre, .info__card__cantidad, .info__card__total{
-    width:45%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px 0px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 14px;
-    background-color:white;
-    color: black;
-}
-.info__card__total{
-    width: 25%;
-    border-top-right-radius:3px ;
-    border-bottom-right-radius:3px ;
-    position: relative;
-}
-.info__card__total svg{
-    position: absolute;
-    top: 1%;
-    right: 5%;
-    font-size: 18px;
-    cursor: pointer;
-}
-.info__card__cantidad{
-    width:15% ;
-}
-.info__card__img{
-    width: 15%;
-    border-top-left-radius:3px ;
-    border-bottom-left-radius:3px ;
-}
-.info__card__img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius:3px ;
-    border-bottom-left-radius:3px ;
-}
-#total{
-    width:100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 28px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
-}
-#total span{
-    font-weight: bolder;
-}
-#total a{
-    color: white;
-    text-decoration: none;
-}
-#total svg{
+#alert span svg{
     margin-right: 5px;
 }
-.carrito__detail{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-    padding: 0px 0px;
-    padding-top: 10px;
-    position: relative;
+@keyframes table{
+    from{transform: scale(0);}
+    to{transform: scale(1);}
 }
-.detal__title{
-    text-align: center;
-    font-weight: 100;
-    font-size: 21px;
-    margin-bottom: 30px;
-}
-.carrito__detail p{
-    font-size: 20px;
-    font-weight: 100;
-    margin-left: 8px;
-}
-.carrito__detail img{
-    width: 90%;
-    height: 50px;
-    margin-bottom: 20px;
-}
-.form{
+.table__content{
+    padding: 15px 0px;
     width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    animation: table;
+    animation-duration: 0.2s;
 }
-.form label{
-    font-size: 18px;
+.table__content h2{
     display: inline-block;
     width: 100%;
-    margin-left: 8px;
+    text-align: center;
+    font-size: 25px;
 }
-.form input{
-    width:150px;
-    height:30px;
-    background-color: rgb(75, 66, 65);
-    border: none;
-    border-bottom:1px solid white ;
-    margin-bottom: 25px;
-    transition: all 0.3s;
-    padding:0px  5px;
-    color: white;
-    margin-left: 8px;
+.table__content div{
+    overflow-x: auto;
+    height: auto;
 }
-#clave{
-    width:50px;
+
+.table{
+    width:800px;
+    padding: 0px 55px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
-.form input:active , .form input:focus{
-    outline: none;
-    
+.table__head{
+    width: auto;
+    display: flex;
+    border-right:1px solid gray;
 }
-.form input[type="month"]{
+.table__head div{
     width: 170px;
-}
-
-.form input[type=number]::-webkit-inner-spin-button, 
-.form input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-.form input[type=number] { -moz-appearance:textfield; }
-
-.carrito__detail button{
-    position: absolute;
-    bottom: 0%;
-    width: 100%;
     height: 50px;
-    background-color: rgb(241, 195, 15);
-    border: none;
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    cursor: pointer;
     font-weight: 600;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left:1px solid gray ;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.table_body_a{
+    display: flex;
+
+}
+.table__body{
+    border-right: 1px solid gray ;
+}
+.table__body div div{
+    border-left:1px solid gray ;
+    border-bottom: 1px solid gray;
+    width: 170px;
+    height: 100px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 3px;
+
+}
+.table__body div div img{
+    height: 100%;
+}
+.table_cant, .table_op{
+    width: 90px !important;
+}
+.table__body div .table_cant{
+    width: 90px !important;
 }
 
-
-/* Scroll */
-
-.info__card::-webkit-scrollbar {
-    -webkit-appearance: none;
+.table__body div .table_op{
+    width: 90px !important;
 }
-
-.info__card::-webkit-scrollbar:vertical {
-    width:10px;
+.table__footer{
+    display: flex;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
 }
-
-.info__card::-webkit-scrollbar-button:increment,.info__card::-webkit-scrollbar-button {
-    display: none;
-} 
-
-.info__card::-webkit-scrollbar:horizontal {
-    height: 10px;
+.table__footer div{
+    width:90px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bolder;
 }
-
-.info__card::-webkit-scrollbar-thumb {
-    background-color: #797979;
-    border-radius: 20px;
-    border: 2px solid #f1f2f3;
+.table__footer #total{
+    justify-content: start;
+    padding-left:20px ;
+    font-size:20px ;
+    width: 430px;
+    border-right: 1px solid gray;
 }
-
-.info__card::-webkit-scrollbar-track {
-    border-radius: 10px;  
+.table__footer #total_num{
+    width: 170px;
+    border-right: 1px solid gray;
+}
+.table__footer #comprar{
+    background-color: #0ab98b;
+    color: white;
+    cursor: pointer;
+}
+.table__footer #comprar:hover{
+    background-color: #04f5b5
+}
+#comprar a{
+    text-decoration: none;
+    color: white;
 }

@@ -1,6 +1,6 @@
 import "../assets/carrtito.css"
 
-import { faArrowAltCircleLeft, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleLeft, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,7 +11,6 @@ import { contexto } from "./CartContext";
 function Cart() {
     const {ProductoCarrito,removeItem,clear} =useContext(contexto)
     const [Total, setTotal] = useState(0)
-    
     function total() {
         let suma=0
         for (const it of ProductoCarrito) {
@@ -30,63 +29,44 @@ function Cart() {
     
     return(
         <>
-            {ProductoCarrito.length==0 ?(<div id="volver"><p>No hay Producto en el carrito</p><Link to="/"><p><FontAwesomeIcon icon={faArrowAltCircleLeft} />Volver a la tienda</p></Link></div>):
-            (
-                <div className="carrito__content">
-                    <div className="carrito__card">
-                    <div className="carrito__info">
-                        <h2>Carrito</h2>
-                            <div className="info__card">
-                                {ProductoCarrito.map(
-                                    e=>
-                                    <>
-                                    <div className="info__card__img">
-                                        <img src={e.item.imagen} />
-                                    </div>
-                                    <div className="info__card__nombre">
-                                        <p>{e.item.nombre}</p>
-                                    </div>
-                                    <div className="info__card__cantidad">
-                                        <p>{e.cantidad}</p>
-                                    </div>
-                                    <div className="info__card__total">
-                                        <p>{e.item.descuento==false ? (e.item.precio.toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})):(e.item.precio-(e.item.precio*(e.item.porcentaje/100))).toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})}</p>
-                                        <FontAwesomeIcon onClick={()=>removeItem(e.item.id)} icon={faTimes} />
-                                    </div>
-
-                                    </>
-                                )}
-                            </div>
-                        <div id="total">
-                            <Link to="/"><p><FontAwesomeIcon icon={faArrowAltCircleLeft} />Volver a la tienda</p></Link>
-                            <p>Total: <span>{Total.toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})}</span></p>
-                        </div>
+        {ProductoCarrito.length==0 ? (<div id="alert"><h2>No Hay Productos en el Carrito</h2><Link to="/"><span><FontAwesomeIcon icon={faArrowAltCircleLeft}/>Volver A la Tienda</span></Link></div>):(
+            <div className="table__content">
+            <h2>Detalle Carrito</h2>
+            <div>
+                <div className="table">
+                    <div className="table__head">
+                        <div>Imagen</div>
+                        <div>Nombre</div>
+                        <div className="table_cant">Cantidad</div>
+                        <div>Precio</div>
+                        <div className="table_op">Opciones</div>
                     </div>
-
-                    <div className="carrito__detail">
-                        <p className="detal__title">Detalles del Carrito</p>
-                        <div>
-                            <p>Tarjetas</p>
-                            <img src="https://vinotecalacristaleria.es/wp-content/uploads/2019/07/iconos-tarjetas-de-credito.png" />
-                            <div className="form">
-                                <label for="numero">Numero de Tarjeta</label>
-                                <input type="number" name="numero"></input>
-                                <label>Fecha de Expiracion</label>
-                                <input type="month" name="fecha"></input>
-                                <label for="clave">Cw</label>
-                                <input id="clave" type="number" name="clave"></input>
-                            </div>
-                            <button>Pagar</button>
-                        </div>
+                    <div className="table__body">
+                        {
+                            ProductoCarrito.map(
+                                e=>
+                                <div key={e.item.id} className="table_body_a">
+                                    <div><img src={e.item.imagen} /> </div>
+                                    <div>{e.item.nombre}</div>
+                                    <div className="table_cant">{e.cantidad}</div>
+                                    <div>{ e.item.descuento==false ? (e.item.precio.toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})):(e.item.precio-(e.item.precio*(e.item.porcentaje/100))).toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})}</div>
+                                    <div className="table_op"><FontAwesomeIcon onClick={()=>removeItem(e.item.id)} icon={faTrashAlt} /></div>
+                                </div>
+                            )
+                        }         
                     </div>
+                    <div className="table__footer">
+                        <div id="total">Total:</div>
+                        <div id="total_num">{Total.toLocaleString('en-US', {style: 'currency',currency: 'USD', minimumFractionDigits: 2})}</div>
+                        <div id="comprar"><Link to="/Pagar">Comprar</Link></div>
                     </div>
                 </div>
-            )}
-            
-            
-        
-    </>
+            </div>
+        </div>
+        )}
+        </>
     )
 }
+
 
 export default Cart

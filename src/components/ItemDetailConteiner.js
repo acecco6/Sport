@@ -16,7 +16,9 @@ function ItemDetailConteiner(props) {
             query.then((snapshot)=>{
                 snapshot.forEach(doc => {
                     if (doc.id == id) {
-                        setproducto(doc.data())    
+                        let producto=doc.data()
+                        producto.id=doc.id
+                        setproducto(producto)    
                     }
                     
                 });
