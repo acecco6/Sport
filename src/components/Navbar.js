@@ -10,11 +10,11 @@ import React from "react";
 import { contexto } from "./CartContext";
 
 function Navbar() {
-    
     document.title = 'Radtek';
     const {ProductoCarrito} =useContext(contexto)
     const [navPosition, setnavPosition] = useState(false)
     const [countCarrito,setcountCarrito]= useState(ProductoCarrito.length)
+
     useEffect(() => {
         setcountCarrito(ProductoCarrito.length)
     }, [ProductoCarrito])
