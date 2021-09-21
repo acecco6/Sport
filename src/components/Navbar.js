@@ -49,7 +49,7 @@ function Navbar() {
                         <FontAwesomeIcon icon={faEnvelope} /><p>example@example.com</p>
                     </div>
                     <div className="info__cuenta">
-                        <Link to="/Account"><FontAwesomeIcon icon={faUser} /><p>Account</p></Link>
+                        <a><FontAwesomeIcon icon={faUser} /><p>Account</p></a>
                     </div>
                 </div>
             </div> 

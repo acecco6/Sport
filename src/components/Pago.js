@@ -11,31 +11,27 @@ function Pago() {
     const [Tarjet, setTarjet] = useState("https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png")
     const [Pago, setPago] = useState(false)
     const [Procesando, setProcesando] = useState(false)
-    const [redirect, setredirect] = useState(false)
-    const [Timer, setTimer] = useState(3)
     const {clear}=useContext(contexto)
+    const [redirect, setredirect] = useState(false)
     
-    
-    useEffect(() => {
-        if (Procesando) {
-            if (Timer>=0) {
-                setInterval(() => {
-                    setTimer(Timer-1)
-                },1000 );   
-            }else{
-                clear()
-                setredirect(true)
-            }
-        }
-    },[Timer][Procesando])
 
-    function cambPago() {
+    function ActiveRedirect(){
         setPago(true)
-        setTimeout(() => {
-            setProcesando(true)
-        }, 3000);
+        clear()
+        cambPago().then(()=>{
+            setTimeout(() => {
+                setredirect(true)
+            },3000);
+        })
+        
     }
-
+    function cambPago() {
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve(setProcesando(true))
+            }, 3000);
+        })
+    }
 
     function Tarjetvalue(e) {
         switch (e.target.value) {
@@ -80,7 +76,7 @@ function Pago() {
                 <label>CVC</label>
                 <input type="number"></input>
             </div>
-            <div id="pagar" onClick={cambPago}>
+            <div id="pagar" onClick={ActiveRedirect}>
                 Pagar
             </div>
         </form>
@@ -101,8 +97,8 @@ function Pago() {
                 <div className="finalizado">
                 <img src="https://cdn1.iconfinder.com/data/icons/everyday-2/64/good_ok_check_mark-256.png" />
                 <p>Pago Realizado</p>
-                <p id="redi">Sera Redirijido en: {Timer}</p>
-                {redirect==true? <Redirect to="/" />:""}
+                <div id="redi">Sera Redireccionado en 3s</div>
+                {redirect?<Redirect to="/"/>:""}
                 </div>
                 
             )}

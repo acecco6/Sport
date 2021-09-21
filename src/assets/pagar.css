@@ -172,9 +172,10 @@ input[type=number] { -moz-appearance:textfield; }
 .esperando p{
     margin-left: 20px;
 }
+
 .finalizado{
     width: 280px;
-    height: 90px;
+    height: 85px;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -189,7 +190,7 @@ input[type=number] { -moz-appearance:textfield; }
     animation-duration: 0.3s;
 }
 .finalizado img{
-    height: 50%;
+    height: 40%;
     border: 1px solid white;
     border-radius: 100%;
 }
