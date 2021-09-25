@@ -6,7 +6,7 @@ import Footer from "./components/Footer"
 import ItemDetailConteiner from "./components/ItemDetailConteiner"
 import ItemListConteiner from "./components/ItemListConteiner"
 import Navbar from "./components/Navbar"
-import Pago from "./components/Pago"
+import Ordenes from "./components/Odenes"
 
 function App() {
     
@@ -19,7 +19,7 @@ function App() {
                     <Route path="/categoria/:id" component={ItemListConteiner} />
                     <Route path="/item/:id" component={ItemDetailConteiner} />
                     <Route path="/cart" component={Cart} />
-                    <Route path="/Pagar" component={Pago} />
+                    <Route path="/Comprobante/:id" component={Ordenes} />
                 </Switch>
                 <Footer/>
             </CartContext>

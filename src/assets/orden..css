@@ -1,0 +1,33 @@
+#orden{
+    width:300px;
+    background-color: #457b9d;
+    height: auto;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#orden h1{
+    font-size: 23px ;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#orden p{
+    margin: 18px 0px;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#orden p span{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#orden h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    
+}

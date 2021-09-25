@@ -1,12 +1,14 @@
 import { Context, createContext, useState } from "react";
 
 import React from "react";
+import { firestore } from "./ItemCollection";
 
 export const contexto=createContext()
 const {Provider}=contexto
 
 function CartContext({children}){
     const [ProductoCarrito, setProductoCarrito] = useState([])
+    const [SearchValue, setSearchValue] = useState("")
 
     function addItem(detalle,cantidad){
         let exist=ProductoCarrito.find(i=>i.item.id==detalle.id)
@@ -40,8 +42,12 @@ function CartContext({children}){
         setProductoCarrito([])
     }
 
+    function Search(dato){
+        setSearchValue(dato)
+    }
+
     return(
-        <Provider value={{ProductoCarrito,addItem,removeItem,clear}}>
+        <Provider value={{ProductoCarrito,SearchValue,addItem,removeItem,clear,Search,}}>
             {children}
         </Provider>
     )
