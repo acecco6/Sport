@@ -1,7 +1,5 @@
 import { Context, createContext, useState } from "react";
-
 import React from "react";
-import { firestore } from "./ItemCollection";
 
 export const contexto=createContext()
 const {Provider}=contexto
