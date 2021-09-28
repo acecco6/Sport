@@ -3,6 +3,8 @@ import "../assets/loader.css"
 import { useContext, useEffect, useState } from "react";
 
 import Item from "./Item"
+import React from 'react';
+import Reveal from 'react-reveal/Reveal';
 import { contexto } from "./CartContext";
 
 function ItemList({items}) {
@@ -26,7 +28,10 @@ function ItemList({items}) {
             {
                 element.map(
                     e=>
+                    <Reveal>
                         <Item key={e.id} item={e} />
+                    </Reveal  >
+                        
                 ) 
             }
         </div>
