@@ -155,6 +155,15 @@
 
 
 @media (max-width:900px){
+    #descuento{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 8px 10px;
+    }
+
     .item__detail{
         width: 100%;
         height: auto;
