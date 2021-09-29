@@ -3,6 +3,7 @@ import "../assets/itemdetail.css"
 
 import { useContext, useState } from "react";
 
+import AnimatedCard from "@rihor/react-animated-card"
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner"
@@ -31,9 +32,9 @@ function ItemDetail({items}) {
             
         ):(
             <div className="item__detail">
-                <div className="item__detail__img">
+                <AnimatedCard className="item__detail__img">
                     <img src={items.imagen} />           
-                </div> 
+                </AnimatedCard> 
                 <div className="item__detail__description">
                     { items.descuento==true ? (<div id="descuento"><p>Descuento - {items.porcentaje}%</p></div>):<></>}
                     <div id="description__pro">

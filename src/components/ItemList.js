@@ -28,10 +28,11 @@ function ItemList({items}) {
             {
                 element.map(
                     e=>
-                    <Reveal>
-                        <Item key={e.id} item={e} />
-                    </Reveal  >
-                        
+                    e.stock == 0 ? console.log(e.stock):(
+                        <Reveal>
+                            <Item key={e.id} item={e} />
+                        </Reveal>
+                    )      
                 ) 
             }
         </div>

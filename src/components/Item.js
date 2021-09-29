@@ -9,13 +9,12 @@ function Item({item}) {
     
     return(
         <>
-            {item.stock > 0 ?(
-                 <div className="producto_content">
-                 {   item.descuento==true ? (
-                     <div className="producto__descuento">
-                     <p>% {item.porcentaje}</p>
-                     </div>
-                 ):<></>}
+                <div className="producto_content">
+                {   item.descuento==true ? (
+                 <div className="producto__descuento">
+                    <p>% {item.porcentaje}</p>
+                 </div>
+                ):<></>}
                  
                  <div className="producto__img">
                      
@@ -32,7 +31,6 @@ function Item({item}) {
                      </div> 
                  </div>
              </div>
-            ):("")}
            
         </>
         
