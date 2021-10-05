@@ -1,10 +1,11 @@
 import "../assets/orden..css"
 
-import { Redirect, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
+import Loader from "react-loader-spinner"
 import React from "react";
 import { firestore } from "./ItemCollection";
+import { useParams } from "react-router-dom";
 
 function Ordenes() {
     const [Orden, setOrden] = useState([]) 
@@ -46,7 +47,14 @@ function Ordenes() {
                     )} 
                 </div>
             </div> 
-            ):<>no hay nada</>
+            ):<><div className="carga">
+                    <Loader
+                        type="Oval"
+                        color="#00BFFF"
+                        height={70}
+                        width={70}
+                    />
+                </div></>
             }
 
         </div>
