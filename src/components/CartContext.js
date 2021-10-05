@@ -29,9 +29,7 @@ function CartContext({children}){
     }
     
     function removeItem(id){
-        console.log(id)
         let item=ProductoCarrito.filter(i=>i.item.id!=id)
-        console.log(item)
         setProductoCarrito(item)
         
     }

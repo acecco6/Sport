@@ -28,7 +28,7 @@ function ItemList({items}) {
             {
                 element.map(
                     e=>
-                    e.stock == 0 ? console.log(e.stock):(
+                    e.stock == 0 ? "":(
                         <Reveal key={e.id}>
                             <Item key={e.id} item={e} />
                         </Reveal>
