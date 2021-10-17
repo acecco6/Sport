@@ -3,12 +3,12 @@ import "firebase/firestore"
 import firebase from "firebase/app"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD9G1LWDTCLrg-WGRhnRTewFwa-V8Lyl3Y",
-  authDomain: "radtek-eac5a.firebaseapp.com",
-  projectId: "radtek-eac5a",
-  storageBucket: "radtek-eac5a.appspot.com",
-  messagingSenderId: "104737010996",
-  appId: "1:104737010996:web:ba19739e10253acfb72161"
+  apiKey: "AIzaSyCL2eLHXyuRcNO91rQBy69AKoljnujVXnI",
+  authDomain: "ecomerce-3809c.firebaseapp.com",
+  projectId: "ecomerce-3809c",
+  storageBucket: "ecomerce-3809c.appspot.com",
+  messagingSenderId: "613883322160",
+  appId: "1:613883322160:web:727670a6cca3b09d42f2f5"
 };
 
 // Initialize Firebase

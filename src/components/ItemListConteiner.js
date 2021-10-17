@@ -7,43 +7,40 @@ import { firestore } from "./ItemCollection";
 import { useParams } from "react-router-dom";
 
 function ItemListConteiner() {
-    
-
     const [producto, setproducto] = useState([])   
      
     const {id}=useParams()
     useEffect(()=>{
-        // REFERENCIA A LOS PRODUCTOS
-        const coleccion=firestore.collection("productos")
-        // QUERY A LOS PRODUCTOS 
-        if (id!=undefined) {
-            setproducto([])
-            const query=coleccion.where("categori","==",parseInt(id)).get()
-            query.then((snapshot)=>{
-                let productos=[]
-                const docs=snapshot.docs
-                docs.forEach(doc => {
-                    let producto=doc.data()
-                    producto.id=doc.id
-                    productos.push(producto)
-                });
-                setproducto(productos)
-            })
-        }else{
-            setproducto([])
-            const query=coleccion.get()
-            query.then((snapshot)=>{
-                let productos=[]
-                const docs=snapshot.docs
-                docs.forEach(doc => {
-                    let producto=doc.data()
-                    producto.id=doc.id
-                    productos.push(producto)
-                });
-                setproducto(productos)
-            })
-        }
-
+            // REFERENCIA A LOS PRODUCTOS
+            const coleccion=firestore.collection("productos")
+            // QUERY A LOS PRODUCTOS 
+            if (id!=undefined) {
+                setproducto([])
+                const query=coleccion.where("categori","==",parseInt(id)).get()
+                query.then((snapshot)=>{
+                    let productos=[]
+                    const docs=snapshot.docs
+                    docs.forEach(doc => {
+                        let producto=doc.data()
+                        producto.id=doc.id
+                        productos.push(producto)
+                    });
+                    setproducto(productos)
+                })
+            }else{
+                setproducto([])
+                const query=coleccion.get()
+                query.then((snapshot)=>{
+                    let productos=[]
+                    const docs=snapshot.docs
+                    docs.forEach(doc => {
+                        let producto=doc.data()
+                        producto.id=doc.id
+                        productos.push(producto)
+                    });
+                    setproducto(productos)
+                })
+            }
     },[id])
 
     return(
